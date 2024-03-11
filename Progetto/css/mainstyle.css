@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Ruslan+Display&display=swap');
+
+* {
+    font-family: "Ruslan Display", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+ 
+body{
+    margin: 0px;
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+}
+.container{
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    align-items: center;
+    justify-items: center;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.sx{
+    margin: 0px;
+    grid-column: 1;
+    width: inherit;
+    height: inherit;
+    background-color: #65e180;
+
+}
+
+.cx{
+    position: absolute;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-column: 2;
+    margin: 0px;
+    width: 60%;
+    height: 100%;
+    background: #30bf1a;
+
+}
+
+.dx{
+    margin: 0px;
+    grid-column: 3;
+    width: inherit;
+    height: inherit;
+    background-color: #65e180;
+}
+
+#info{
+    position: relative;
+    top: 3%;
+    left: 4%;
+    border-radius: 100%;
+    padding: 2px;
+    text-align:start;
+    line-height: 25px;
+
+
+
+    
+}
+
+.gioco{
+    font-size: 10rem;
+    text-align:center;
+    line-height: 0px;
+}
