@@ -43,15 +43,38 @@ formSignup.addEventListener("submit", function(e){
         console.log("Formato dati valido... invio a php")
         
         const correctForm = document.getElementById("signupform");
-        let formdata = new FormData(correctForm);
+        let formdata = new FormData();
 
-        fetch("", {
-            request: 'POST',
-            data: formdata
+        console.log(nome.value);
+        formdata.append('nome', nome.value);
+        console.log(cogn.value);
+        formdata.append('cognome', cogn.value);
+        console.log(usrnm.value);
+        formdata.append('user', usrnm.value);
+        console.log(mail.value);
+        formdata.append('mail', mail.value);
+        console.log(psswrd.value);
+        formdata.append('passw', psswrd.value);
+
+        fetch("../php/signup.php", {
+            method: 'POST',
+            body: formdata
         })
-
-        .then()
         
+        .then(data => data.json())
+        .then(data => {
+            if(!data.error){
+                console.log("Todo bien");
+                adv.textContent = data.info;
+                adv.classList.add("showed");
+                window.location.replace("../php/homepage.php"); 
+            }else{
+                console.log("No todo bien");
+                adv.textContent = data.info;
+                adv.classList.add("showed");
+                correctForm.reset();
+            }
+        });
     }
         
     

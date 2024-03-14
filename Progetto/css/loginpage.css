@@ -32,3 +32,25 @@ input{
     transition-timing-function: ease-out;
     transition-delay: 0s;
 }
+
+.access{
+    display: grid;
+}
+
+#alert{
+    justify-self: center;
+    align-self: stretch;
+    position: relative;
+    top: -50px;
+    
+}
+.showed{
+    color: red;
+    font-size: 0.75rem;
+    display: block;
+    border-radius: 20px;
+    background-color: #ffffffb4;
+    text-align: center;
+    justify-items: center;
+    padding: 5px;
+}

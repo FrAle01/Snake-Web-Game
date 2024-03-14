@@ -53,7 +53,7 @@ body{
     background-color: #65e180;
 }
 
-#info{
+.info{
     position: relative;
     top: 3%;
     left: 4%;
@@ -71,6 +71,14 @@ body{
     font-size: 10rem;
     text-align:center;
     line-height: 0px;
+}
+
+.back{
+    position: relative;
+    font-size: 2rem;
+    color: white;
+    top: 5px;
+    left: 5px;
 }
 
 input:invalid{

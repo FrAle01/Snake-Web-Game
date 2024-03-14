@@ -5,22 +5,19 @@
         <head>
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Snake</title>
-            <link rel="stylesheet" href="../css/index.css">
+            <title>Home</title>
+            <link rel="stylesheet" href="../css/homepage.css">
             <link rel="stylesheet" href="../css/mainstyle.css">
         </head>
         <body>
-            <script src="../js/index.js"></script>
+            <script src="../js/homepage.js"></script>
             <div class="container">
                 <div class="sx">
-                    <button class="info">info</button>
+                    <button id="info">info</button>
                 </div>
                 <div class="cx">
                     <h1 class="gioco">SNAKE</h1>
-                    <div class="buttons">
-                        <a id="login" href="loginpage.php">Accedi</a>
-                        <a id="signup" href="signuppage.php">Registrati</a>
-                    </div>
+                    
                 </div>
                 <div class="dx">
                 </div>
