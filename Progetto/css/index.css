@@ -4,7 +4,7 @@
     text-decoration: none;
 }
 
-#login, #signin{
+#login, #signup{
     display: block;
     width: auto;
     height: auto;
@@ -21,7 +21,7 @@
     top: -100px;
 }
 
-#login:hover, #signin:hover{
+#login:hover, #signup:hover{
     box-shadow: 10px 10px 0px #65e180;
     transition-property: box-shadow;
     transition-duration: 0.2s;

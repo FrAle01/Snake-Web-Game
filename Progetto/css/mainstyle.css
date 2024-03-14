@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Ruslan+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
 
-* {
-    font-family: "Ruslan Display", sans-serif;
-    font-weight: 400;
+*{
+    font-family: "Kode Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 600;
     font-style: normal;
 }
  
@@ -70,4 +71,8 @@ body{
     font-size: 10rem;
     text-align:center;
     line-height: 0px;
+}
+
+input:invalid{
+    border-color: red;
 }

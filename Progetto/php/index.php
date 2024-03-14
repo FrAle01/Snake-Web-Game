@@ -19,7 +19,7 @@
                     <h1 class="gioco">SNAKE</h1>
                     <div class="buttons">
                         <a id="login" href="loginpage.php">Accedi</a>
-                        <a id="signin" href="signinpage.php">Registrati</a>
+                        <a id="signup" href="signuppage.php">Registrati</a>
                     </div>
                 </div>
                 <div class="dx">

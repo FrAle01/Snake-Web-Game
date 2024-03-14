@@ -20,11 +20,11 @@
                     <div class="access">
                         <form>
                             <label for="user">
-                            <input type="text" name="user" id="user" placeholder="username" required>
+                                <input type="text" name="user" id="user" placeholder="Username" required>
                             </label>
 
                             <label for="passw">
-                            <input type="text" name="passw" id="passw" placeholder="password" required>
+                                <input type="password" name="passw" id="passw" placeholder="Password" required>
                             </label>
 
                             <button id="login">Accedi</button>
