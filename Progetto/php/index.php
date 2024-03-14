@@ -13,7 +13,6 @@
             <script src="../js/index.js"></script>
             <div class="container">
                 <div class="sx">
-                    <button class="info">info</button>
                 </div>
                 <div class="cx">
                     <h1 class="gioco">SNAKE</h1>

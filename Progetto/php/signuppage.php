@@ -13,33 +13,43 @@
         <body>
             <div class="container">
                 <div class="sx">
-                    <button class="info">info</button>
                 </div>
                 <div class="cx">
                     <a class="back" href="index.php"><i class= "fa fa-toggle-left"></i></a>
                     <h1 class="gioco">SNAKE</h1>
                     <div class="dati">
                         <form id="signupform">
-                            <label for="nome">
-                                <input type="text" name="nome" id="nome" pattern="^[A-Z]+[a-zA-Z]*$" placeholder="Nome" required>
-                            </label>
-                            
-                            <label for="cognome">
-                                <input type="text" name="cognome" id="cognome" pattern="^[A-Z]+[a-zA-Z]*$" placeholder="Cognome" required>
-                            </label>
 
-                            <label for="user">
-                                <input type="text" name="user" id="user" placeholder="Username" required>
-                            </label>
+                            <div class="input-container">
+                                <label for="nome">
+                                    <input type="text" name="nome" id="nome" pattern="^[A-Z]+[a-zA-Z]*$" placeholder="Nome" required>
+                                </label>
+                            </div>
 
-                            <label for="mail">
-                                <input type="email" name="mail" id="mail" placeholder="EMail" required>
-                            </label>
-                            
-                            <label for="passw">
-                                <input type="password" name="passw" id="passw" placeholder="Password" required>
-                                <i class="fa fa-eye" id="eye"></i>
-                            </label>
+                            <div class="input-container">
+                                <label for="cognome">
+                                    <input type="text" name="cognome" id="cognome" pattern="^[A-Z]+[a-zA-Z]*$" placeholder="Cognome" required>
+                                </label>
+                            </div>
+
+                            <div class="input-container">
+                                <label for="user">
+                                    <input type="text" name="user" id="user" placeholder="Username" required>
+                                </label>
+                            </div>
+
+                            <div class="input-container">
+                                <label for="mail">
+                                    <input type="email" name="mail" id="mail" placeholder="EMail" required>
+                                </label>
+                            </div>
+
+                            <div class="input-container">  
+                                <label for="passw">
+                                    <input type="password" name="passw" id="passw" placeholder="Password" required>
+                                    <i class="fa fa-eye" id="eye"></i>
+                                </label>
+                            </div>
 
                             <button id="signup">Registrati</button>
                         </form>

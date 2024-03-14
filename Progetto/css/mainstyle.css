@@ -56,15 +56,11 @@ body{
 .info{
     position: relative;
     top: 3%;
-    left: 4%;
-    border-radius: 100%;
+    right: 70%;
+    border-radius: 20px;
     padding: 2px;
     text-align:start;
     line-height: 25px;
-
-
-
-    
 }
 
 .gioco{

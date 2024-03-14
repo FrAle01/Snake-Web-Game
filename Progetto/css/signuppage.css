@@ -55,3 +55,14 @@ input{
     transition-timing-function: ease-out;
     transition-delay: 0s;
 }
+
+.input-container{
+    position: relative;
+}
+
+#eye{
+    position: absolute;
+    right: 10%;
+    top: 20px;
+    font-size: 1.5rem;
+}

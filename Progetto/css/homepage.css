@@ -1,0 +1,22 @@
+.inner-container{
+    display: block;
+    width: auto;
+    height: auto;
+    margin: 0px;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 17px;
+    text-align:left;
+    border-radius: 20px;
+    min-width: 60%;
+    text-decoration: none;
+    font-size: 1.25rem;
+    position: relative;
+    top: -50px;
+}
+
+.icon{
+    position:absolute;
+    right: 17px;
+    font-size: 32px;
+}

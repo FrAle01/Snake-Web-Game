@@ -45,15 +45,10 @@ formSignup.addEventListener("submit", function(e){
         const correctForm = document.getElementById("signupform");
         let formdata = new FormData();
 
-        console.log(nome.value);
         formdata.append('nome', nome.value);
-        console.log(cogn.value);
         formdata.append('cognome', cogn.value);
-        console.log(usrnm.value);
         formdata.append('user', usrnm.value);
-        console.log(mail.value);
         formdata.append('mail', mail.value);
-        console.log(psswrd.value);
         formdata.append('passw', psswrd.value);
 
         fetch("../php/signup.php", {

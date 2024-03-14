@@ -13,21 +13,24 @@
         <body>
             <div class="container">
                 <div class="sx">
-                    <button class="info">info</button>
                 </div>
                 <div class="cx">
                     <a class="back" href="index.php"><i class= "fa fa-toggle-left"></i></a>
                     <h1 class="gioco">SNAKE</h1>
                     <div class="access">
-                        <form>
-                            <label for="user">
-                                <input type="text" name="user" id="user" placeholder="Username" required>
-                            </label>
+                        <form id="loginform">
+                            <div class="input-container">
+                                <label for="user">
+                                    <input type="text" name="user" id="user" placeholder="Username" required>
+                                </label>
+                            </div>
                             
-                            <label for="passw">
-                                <input type="password" name="passw" id="passw" placeholder="Password" required>
-                                <i class="fa fa-eye" id="eye"></i>
-                            </label>
+                            <div class="input-container">
+                                <label for="passw">
+                                    <input type="password" name="passw" id="passw" placeholder="Password" required>
+                                    <i class="fa fa-eye" id="eye"></i>
+                                </label>
+                            </div>
                             
                             <button id="login">Accedi</button>
                         </form>
