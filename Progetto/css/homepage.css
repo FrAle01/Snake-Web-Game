@@ -1,22 +1,27 @@
 .inner-container{
+    position: relative;
+    top: -50px;
+    font-size: 1.5rem;
+}
+
+.icon{
+    position: absolute;
+    right: 10%;
+    top: 20px;
+}
+
+#classic, #infinity, #obstacles{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    min-width: 60%;
     display: block;
     width: auto;
     height: auto;
     margin: 0px;
     background: #ffffff;
-    color: rgb(0, 0, 0);
     padding: 17px;
-    text-align:left;
     border-radius: 20px;
-    min-width: 60%;
-    text-decoration: none;
+    text-align:left;
     font-size: 1.25rem;
-    position: relative;
-    top: -50px;
-}
 
-.icon{
-    position:absolute;
-    right: 17px;
-    font-size: 32px;
 }
