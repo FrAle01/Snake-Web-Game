@@ -15,7 +15,7 @@ body{
 }
 .container{
     display: grid;
-    grid-template-columns: 20% 60% 20%;
+    grid-template-columns: 25% 50% 25%;
     align-items: center;
     justify-items: center;
     margin: 0px;
@@ -29,6 +29,7 @@ body{
     width: inherit;
     height: inherit;
     background-color: #65e180;
+    display: grid;
 
 }
 
@@ -39,7 +40,7 @@ body{
     justify-content: center;
     grid-column: 2;
     margin: 0px;
-    width: 60%;
+    width: 50%;
     height: 100%;
     background: #30bf1a;
 

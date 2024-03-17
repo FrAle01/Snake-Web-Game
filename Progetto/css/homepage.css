@@ -10,7 +10,7 @@
     top: 20px;
 }
 
-#classic, #infinity, #obstacles{
+#classic, #warped, #obstacles{
     text-decoration: none;
     color: rgb(0, 0, 0);
     min-width: 60%;

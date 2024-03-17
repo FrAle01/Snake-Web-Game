@@ -8,11 +8,20 @@
             <title>Snake</title>
             <link rel="stylesheet" href="../css/index.css">
             <link rel="stylesheet" href="../css/mainstyle.css">
+            <link rel="stylesheet" href="../css/ranking.css">
         </head>
         <body>
-            <script src="../js/index.js"></script>
             <div class="container">
                 <div class="sx">
+                    <div id="modesel">
+                        <button id="classic">Classic</button>
+                        <button id="warped">Warped</button>
+                        <button id="obstacles">Obstacles</button>
+                    </div>
+                    <div id="classifica">
+                        <table id="hall">
+                        </table>
+                    </div>
                 </div>
                 <div class="cx">
                     <h1 class="gioco">SNAKE</h1>
@@ -24,6 +33,8 @@
                 <div class="dx">
                 </div>
             </div>
+            <script src="../js/index.js"></script>
+            <script src="../js/ranking.js"></script>
         </body>
 
 

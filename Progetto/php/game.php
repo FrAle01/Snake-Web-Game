@@ -6,26 +6,26 @@
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Home</title>
-            <link rel="stylesheet" href="../css/homepage.css">
+            <link rel="stylesheet" href="../css/game.css">
             <link rel="stylesheet" href="../css/mainstyle.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         </head>
         <body>
-            <script src="../js/homepage.js"></script>
             <div class="container">
                 <div class="sx">
                     
                 </div>
                 <div class="cx">
                     <h1 class="gioco">SNAKE</h1>
-                    <div class= "inner-container">
-                        <a href="game.php" id="classic">CLASSIC</a><i class="fa fa-gamepad icon"></i>
+                    <div class="inner-container">
+                        <table id="game"></table>
+                        <div id="popup">
+                            <p></p>
+                            <button id="avvia">Start</button>
+                        </div>
                     </div>
-                    <div class= "inner-container">
-                        <a id="warped">WARPED</a><i class="fa fa-circle-o-notch icon"></i>
-                    </div>
-                    <div class= "inner-container">
-                        <a id="obstacles">OBSTACLES</a><i class="fa fa-cubes icon"></i>
+                    <div class="inner-container">
+                        <p id="score"></p>
                     </div>
                     
                 </div>
@@ -33,6 +33,7 @@
                     <button class="info">Menu</button>
                 </div>
             </div>
+            <script src="../js/game.js"></script>
         </body>
 
 

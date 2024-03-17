@@ -25,9 +25,7 @@ formLogin.addEventListener("submit", function(e){
 
         let formdata = new FormData();
 
-        console.log(usrnm.value);
         formdata.append('user', usrnm.value);
-        console.log(psswrd.value);
         formdata.append('passw', psswrd.value);
 
         fetch("../php/login.php", {

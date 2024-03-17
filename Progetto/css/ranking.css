@@ -1,0 +1,9 @@
+#modesel button{
+    margin: 5px;
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
+    border-style: none;
+    font-size: 0.75rem;
+    min-width: 25%;
+}

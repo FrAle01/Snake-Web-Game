@@ -68,6 +68,7 @@
             $stmt->execute();
 
             if($stmt->rowCount() > 0){
+                $_SESSION["user"] = $usrnm;
                 echo json_encode(array("error"=> false, "info"=> "Tutto bene quel che finisce bene"));
             }else{
                 echo json_encode(array("error"=> true, "info"=> "Errore nell'inserimento dei dati"));
