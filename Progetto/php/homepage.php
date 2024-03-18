@@ -11,28 +11,31 @@
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         </head>
         <body>
-            <script src="../js/homepage.js"></script>
             <div class="container">
                 <div class="sx">
                     
                 </div>
                 <div class="cx">
+                    <button id="logout">Logout</button>
                     <h1 class="gioco">SNAKE</h1>
                     <div class= "inner-container">
-                        <a href="game.php" id="classic">CLASSIC</a><i class="fa fa-gamepad icon"></i>
+                        <button id="classic">CLASSIC</a><i class="fa fa-gamepad icon"></i>
                     </div>
                     <div class= "inner-container">
-                        <a id="warped">WARPED</a><i class="fa fa-circle-o-notch icon"></i>
+                        <button id="warped">WARPED</button><i class="fa fa-circle-o-notch icon"></i>
                     </div>
                     <div class= "inner-container">
-                        <a id="obstacles">OBSTACLES</a><i class="fa fa-cubes icon"></i>
+                        <button id="obstacles">OBSTACLES</button><i class="fa fa-cubes icon"></i>
                     </div>
                     
                 </div>
                 <div class="dx">
-                    <button class="info">Menu</button>
+
                 </div>
             </div>
+            
+                <script src="../js/homepage.js"></script>
+            
         </body>
 
 

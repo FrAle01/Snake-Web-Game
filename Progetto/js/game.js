@@ -5,14 +5,23 @@ const yGrid = 25;
 const minPointClassic = 5;       // in ogni modalità il punteggio per ogni elemento mangiato varia tra un max e un minimo 
 const maxPointClassic = 15;
 
-let type = "classic";   // modalità di gioco
+let type;           // modalità di gioco
+let paused = false;  // variabile per pausa
 
 let game = document.getElementById("game");
 buildGrid(game);
 
 let score = 0;
-let scoreText = document.getElementById("score");
+const scoreText = document.getElementById("score");
 scoreText.textContent = "Score: "+ score;
+
+let time = "00:00";
+const elemTimer = document.getElementById("timer");
+elemTimer.textContent = "Time: "+time;
+let sec = 0;
+let min = 0;
+let intCount = 0;
+
 
 function getRandom(min, max){
     return Math.floor(Math.random()*(max-min))+min;
@@ -40,11 +49,9 @@ let obsNum = 0;
 
 let dir = "right";  // inizializzo la direzione del serpente
 let loop;       // variabile per il timer del gioco
-let keyevent;   // variabile per event listener keydown
-
-console.log("Snake head: "+snake[0].x +", "+snake[0].y);
-console.log("Food loc: "+food.x +", "+food.y+" con punti: "+food.points);
 // -- fine inizializzazione
+
+
 
 //  costruisco la griglia per il gioco
 function buildGrid(t){
@@ -69,12 +76,20 @@ avvia.addEventListener("click", start);
 
 
 function moveSnake(){
-        console.log(dir);
-        console.log("SnFood loc: "+food.x +", "+food.y+" con punti: "+food.points);
+
+    if(++intCount === 10){ // la pagina si aggiorna ogni 100 millisec, per un secondo ci vogliono 10 aggiornamenti
+        sec++;
+        min = Math.floor(sec/60);
+        let remainingSec = sec%60;
+        time = min.toString().padStart(2,'0')+":"+remainingSec.toString().padStart(2,'0');
+        elemTimer.textContent = "Time: "+time;
+        intCount = 0;
+    }
+    console.log("Min: "+min);
+    console.log("Tot sec: "+sec);
 
     let head = {x: snake[0].x, 
                 y: snake[0].y};
-        console.log("head x,y before: "+head.x+", "+head.y);
     
     // aggiorno la testa del serpente
     switch (dir) {
@@ -91,8 +106,6 @@ function moveSnake(){
             head.y += 1;
             break;
     }
-
-    console.log("head x,y after: "+head.x+", "+head.y);
 
 
     // controllo che abbia mangiato
@@ -137,9 +150,16 @@ function moveSnake(){
             }
             if(score > (obsNum+1)*10){  // ogni 10 punti aggiungo un ostacolo
                 obsNum++;
-                let newObs = {
-                    x: getRandom(1, (xGrid-2)), // gli ostacoli non toccheranno mai il bordo
-                    y: getRandom(1, (yGrid-2))
+                let matchFood = true;
+                let newObs;
+                while(matchFood){   // controllo che il nuovo ostacolo inserito non corrisponda alla posizione di cibo
+                    newObs = {
+                        x: getRandom(1, (xGrid-2)), // gli ostacoli non toccheranno mai il bordo
+                        y: getRandom(1, (yGrid-2))
+                    }
+                    if(newObs.x !== food.x && newObs.y !== food.y){
+                        matchFood = false;
+                    }
                 }
                 obstacles.unshift(newObs);
             }
@@ -159,7 +179,6 @@ function moveSnake(){
     for (let i = 0; i < snake.length; i++) {
         if (head.x === snake[i].x && head.y === snake[i].y){
                 snake.forEach(elem => {
-                    console.log(elem.x+", "+elem.y+" - ")
                 });
             endGame();
             return;
@@ -168,7 +187,6 @@ function moveSnake(){
 
     // no collisioni
     snake.unshift(head);
-        console.log("Draw here");
     drawGame(); // ridisegno la griglia
 
 }
@@ -209,6 +227,7 @@ function drawGame(){
 // avvio gioco
 function start(){
     scoreText.textContent = "Score: "+ score;
+    elemTimer.textContent = "Time: "+time;
 
     // disattiva e nascondi tasto start
     avvia.disabled=true;
@@ -218,18 +237,29 @@ function start(){
     loop=setInterval(moveSnake, 100);
 
     // aggiornamento direzione serpente
-    keyevent= document.addEventListener("keydown",newDir);
+    document.addEventListener("keydown", newDir);
+    document.addEventListener("keydown", pause);
 
 }
 
 function endGame(){
     clearTimeout(loop);
 
+    // impedisco la pausa
+    document.removeEventListener("keydown", pause);
+    paused = false;
+
     let oldScore = score;       // tenuto da parte per inserimento classicafica
     popupText.textContent = "Hai fatto "+oldScore+" punti";
 
     // reset score
     score = 0;
+
+    // reset timer
+    time = "00:00";
+    sec = 0;
+    min = 0;
+    intCount = 0;
 
     // reset serpente
     snake = [{      
@@ -321,3 +351,54 @@ function newDir(event){
     }
 }
 
+function pause(event){
+
+    if(event.key == " "){    // premere lo spazio (o barra spaziatrice)
+
+        console.log("Tasto premuto: "+event.key+" con codice "+event.keyCode);
+
+        if(!paused){        // gioco non in pausa  
+            
+            // interrompo gioco
+            clearTimeout(loop);     
+            
+            // disattivo l'event listener per la direzione
+            document.removeEventListener("keydown",newDir); 
+
+            popupText.textContent = "-- Premi SPACE per continuare --";
+            popupText.hidden = false;
+
+            paused = true;
+
+        }else{              // gioco in pausa
+            
+            popupText.hidden = true;
+
+            // riavvio gioco
+            loop = setInterval(moveSnake, 100);
+
+            // riattivo event per direzione
+            document.addEventListener("keydown",newDir);
+
+            paused = false;
+        }
+    }
+}
+
+function getGameMod(){
+// get game mode
+    let getparam = "?mode='classic'";   // uso classic come modalità di default
+    fetch("../php/modeswitch.php"+getparam)
+    .then(data=> data.json())
+    .then(data => {
+        if(!data.error){
+            console.log("Modalità impostata "+ data.info);
+            type = data.info;
+        }else{
+            console.log("Modalità non settata");
+            console.log("Error: "+data.info);
+        }
+    })
+}
+
+getGameMod();

@@ -12,7 +12,7 @@ tr{
     padding:0;
 }
 td{
-    border-radius: 20px;
+    border-radius: 30px;
     background-color: #ffffffc3;
     margin: 0;
     padding:0;
@@ -30,10 +30,11 @@ td{
     background-color: #000000;
 }
 
-#score{
+#score, #timer{
     position: relative;
     right: 150px;
-    bottom: 10px;
+    bottom: 5px;
+    color: white;
 }
 
 #popup{
@@ -45,12 +46,14 @@ td{
     margin: 10px;
     color: #000000;
     border-style: none;
+    border-radius: 30px;
+    border-color: #30bf1a;
 
 }
 
 #avvia{
     margin: 0;
-    border-radius: 20px;
+    border-radius: 30px;
     padding: 10px;
     border-style: none;
 

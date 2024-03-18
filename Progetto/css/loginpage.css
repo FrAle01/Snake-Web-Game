@@ -9,20 +9,21 @@ form{
 input{
     margin: 10px;
     width: auto;
-    border-radius: 20px;
+    border-radius: 30px;
     padding: 10px;
     text-align: left;
     border-style: none;
     font-size: 1.25rem;
+    color:black;
 }
 
 #login{
     margin: 10px;
-    border-radius: 20px;
+    border-radius: 30px;
     padding: 10px;
     text-align: center;
     border-style: none;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
 }
 
 #login:hover{
@@ -46,9 +47,9 @@ input{
 }
 .showed{
     color: red;
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     display: block;
-    border-radius: 20px;
+    border-radius: 30px;
     background-color: #ffffffb4;
     text-align: center;
     justify-items: center;

@@ -15,7 +15,9 @@
                 <div class="sx">
                 </div>
                 <div class="cx">
-                    <a class="back" href="index.php"><i class= "fa fa-toggle-left"></i></a>
+                    <div class="inner-container">
+                        <a class="back" href="index.php"><i class= "fa fa-toggle-left"></i>BACK</a>
+                    </div>
                     <h1 class="gioco">SNAKE</h1>
                     <div class="dati">
                         <form id="signupform">

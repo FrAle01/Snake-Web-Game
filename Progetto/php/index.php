@@ -31,6 +31,7 @@
                     </div>
                 </div>
                 <div class="dx">
+                    <button class="info">How to play</button>
                 </div>
             </div>
             <script src="../js/index.js"></script>

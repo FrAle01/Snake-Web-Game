@@ -1,0 +1,15 @@
+.exit{
+    position: relative;
+    top: 15px;
+    left: 20px;
+    font-size: 1rem;
+    color: #30bf1a;
+    background-color: white;
+    border-radius: 30px;
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
+
+}
+
+
