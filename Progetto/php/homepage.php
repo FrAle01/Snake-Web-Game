@@ -8,24 +8,37 @@
             <title>Home</title>
             <link rel="stylesheet" href="../css/homepage.css">
             <link rel="stylesheet" href="../css/mainstyle.css">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         </head>
         <body>
             <div class="container">
                 <div class="sx">
                     
+                    
                 </div>
                 <div class="cx">
-                    <button id="logout">Logout</button>
+                    <div>
+                        <?php
+
+                            if (isset($_SESSION["user"])) {
+                                echo '<button class="back" id="logout"><i class= "fa fa-sign-out"></i> Logout</button>';
+                            }else{
+                                echo '<a class="back" href="signuppage.php"><i class= "fa fa-chevron-circle-left"></i> Registrati</a>';
+                            }
+
+                        ?>
+                    </div>
                     <h1 class="gioco">SNAKE</h1>
                     <div class= "inner-container">
-                        <button id="classic">CLASSIC</a><i class="fa fa-gamepad icon"></i>
+                        <button id="classic">CLASSIC</button><i class="fa fa-gamepad icon" id="cIcon"></i>
+                        <p class = "stat" id = "cText" hidden = true></p>
                     </div>
                     <div class= "inner-container">
-                        <button id="warped">WARPED</button><i class="fa fa-circle-o-notch icon"></i>
+                        <button id="warped">WARPED</button><i class="fa fa-spinner icon" id="wIcon"></i>
+                        <p class = "stat" id = "wText" hidden = true></p>
                     </div>
                     <div class= "inner-container">
-                        <button id="obstacles">OBSTACLES</button><i class="fa fa-cubes icon"></i>
+                        <button id="obstacles">OBSTACLES</button><i class="fa fa-cube icon" id="oIcon"></i>
+                        <p class = "stat" id = "oText" hidden = true></p>
                     </div>
                     
                 </div>
@@ -35,6 +48,7 @@
             </div>
             
                 <script src="../js/homepage.js"></script>
+                <script src="../js/statistics.js"></script>
             
         </body>
 

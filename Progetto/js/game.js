@@ -108,20 +108,6 @@ function moveSnake(){
     }
 
 
-    // controllo che abbia mangiato
-    if(head.x === food.x && head.y === food.y){
-        score += food.points;   // aggiorno punteggio
-        scoreText.textContent = "Score: "+ score;
-        // creo nuovo cibo
-        food.x = getRandom(0,(xGrid-1));
-        food.y = getRandom(0,(yGrid-1));
-        food.points = getRandom(minPointClassic,maxPointClassic);
-            console.log("Food eaten");
-    }else{
-        snake.pop();  // elimino la coda del serpente
-            console.log("snake popped");
-    }
-
     switch (type) {
         case "warped":      // quando il serpente inconta il bordo sbuca dall'altra parte
             if(head.x > (xGrid-1) ){
@@ -148,21 +134,6 @@ function moveSnake(){
             if(obsEncountered){
                 return;
             }
-            if(score > (obsNum+1)*10){  // ogni 10 punti aggiungo un ostacolo
-                obsNum++;
-                let matchFood = true;
-                let newObs;
-                while(matchFood){   // controllo che il nuovo ostacolo inserito non corrisponda alla posizione di cibo
-                    newObs = {
-                        x: getRandom(1, (xGrid-2)), // gli ostacoli non toccheranno mai il bordo
-                        y: getRandom(1, (yGrid-2))
-                    }
-                    if(newObs.x !== food.x && newObs.y !== food.y){
-                        matchFood = false;
-                    }
-                }
-                obstacles.unshift(newObs);
-            }
 
         case "classic":    // controllo che non ci sia scontro con i bordi (sia in classic che in obstacles)
             if(head.x > (xGrid-1) || head.x < 0 || head.y > (yGrid-1) || head.y < 0 ){
@@ -173,7 +144,42 @@ function moveSnake(){
             break;
     }
 
+
+    // controllo che abbia mangiato
+    if(head.x === food.x && head.y === food.y){
+        score += food.points;   // aggiorno punteggio
+        scoreText.textContent = "Score: "+ score;
+        // creo nuovo cibo
+        food.x = getRandom(0,(xGrid-1));
+        food.y = getRandom(0,(yGrid-1));
+        food.points = getRandom(minPointClassic,maxPointClassic);
+            console.log("Food eaten");
+    }else{
+        snake.pop();  // elimino la coda del serpente
+            console.log("snake popped");
+    }
+
+    // aggiungo un nuovo ostacolo ogni 10 punti fatti in modalità obstacles
+    if(type === "obstacles"){
+        if(score > (obsNum+1)*10){
+            obsNum++;
+            let matchFood = true;
+            let newObs;
+            while(matchFood){   // controllo che il nuovo ostacolo inserito non corrisponda alla posizione di cibo
+                newObs = {
+                    x: getRandom(1, (xGrid-2)), // gli ostacoli non toccheranno mai il bordo
+                    y: getRandom(1, (yGrid-2))
+                }
     
+                // controllo di non aver posizionato l'ostacolo dove c'è del cibo
+                if(newObs.x !== food.x && newObs.y !== food.y){
+                    matchFood = false;
+                }
+            }
+            obstacles.unshift(newObs);
+        }
+    }
+
 
     // controllo collisioni con il corpo
     for (let i = 0; i < snake.length; i++) {
@@ -250,6 +256,7 @@ function endGame(){
     paused = false;
 
     let oldScore = score;       // tenuto da parte per inserimento classicafica
+    let endingTime = time;      // tenuto per inserimento db
     popupText.textContent = "Hai fatto "+oldScore+" punti";
 
     // reset score

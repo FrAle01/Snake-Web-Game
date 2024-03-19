@@ -8,7 +8,6 @@
             <title>Login</title>
             <link rel="stylesheet" href="../css/loginpage.css">
             <link rel="stylesheet" href="../css/mainstyle.css">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         </head>
         <body>
             <div class="container">
@@ -16,7 +15,7 @@
                 </div>
                 <div class="cx">
                     <div class="inner-container">
-                        <a class="back" href="index.php"><i class= "fa fa-toggle-left"></i>BACK</a>
+                        <a class="back" href="index.php"><i class= "fa fa-chevron-circle-left"></i> BACK</a>
                     </div>
                     <h1 class="gioco">SNAKE</h1>
                     <div class="access">

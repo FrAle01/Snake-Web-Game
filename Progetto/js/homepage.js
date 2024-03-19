@@ -2,6 +2,8 @@ const cButton = document.getElementById("classic");
 const wButton = document.getElementById("warped");
 const oButton = document.getElementById("obstacles");
 
+const logoutB = document.getElementById("logout");
+
 function playClassic(){
     playGame("classic");
 }
@@ -39,3 +41,22 @@ function playGame(mode){
         }
     })
 }
+
+function logout(){
+
+    fetch("../php/logout.php", {
+        method: 'POST'
+    })
+    .then(data => data.json())
+    .then(data => {
+        if(!data.error){
+            console.log(data.info);
+            window.location.replace("../php/index.php");
+        }else{
+            console.log(data.info);
+        }
+    })
+
+}
+
+logoutB.addEventListener("click", logout);

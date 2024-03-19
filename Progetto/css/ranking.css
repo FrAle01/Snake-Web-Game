@@ -1,9 +1,97 @@
-#modesel button{
+.rank-container{
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-rows: 10% 10% 35% 10% 35%;
+}
+
+.inner-rank-container{
+    justify-self: stretch;
+    align-self: stretch;
+    margin: 0;
+    padding: 10px 5px 10px 5px;
+    display: grid;
+}
+
+#modesel{
+    grid-template-columns: 33% 34% 33%;
+}
+
+#modesel button, #refresh{
+    position: relative;
     margin: 5px;
     border-radius: 30px;
     padding: 10px;
     text-align: center;
     border-style: none;
     font-size: 0.9rem;
-    min-width: 25%;
+    min-width: 30%;
 }
+table{
+    border-collapse: collapse;
+}
+
+tr{
+    display: grid;
+    grid-template-columns: 15% 55% 30%;
+    margin: 5px;
+}
+
+td{
+    border-radius: 30px;
+    text-align: center;
+    background-color: #ffffffb4;
+    margin: 0px 2px 0px 2px;
+    line-height: 30px;
+}
+
+tbody td{
+    font-size: 1.2rem;
+}
+
+#classic:hover, #warped:hover, #obstacles:hover, #refresh:hover{
+    box-shadow: 0px 0px 20px green;
+    transition-property: box-shadow;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+    transition-delay: 0s;
+}
+
+@keyframes selecting {
+    from{
+        background-color: white;
+        color: #65e180;
+    }
+    to{
+        background-color: green;
+        color: white;
+    }
+    
+}
+.selected{
+    background-color: green;
+    color: white;
+    animation: selecting 0.2s ease 0s 1;
+
+}
+
+
+@keyframes load {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+.loading{
+    animation: load 0.5s linear 0s 1;
+}
+
+#refresh{
+    width: 35%;
+    justify-self: center;
+}
+
+
+

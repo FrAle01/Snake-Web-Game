@@ -8,12 +8,22 @@
 .icon{
     position: absolute;
     right: 10%;
-    top: 20px;
+    top: 15px;
+    border-radius: 100px;
+    padding: 5px;
+}
+
+.icon:hover{
+    box-shadow: 0px 0px 10px #65e180;
+    transition-property: box-shadow;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+    transition-delay: 0s;
 }
 
 #classic, #warped, #obstacles{
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: #30bf1a;
     border-style: none;
     min-width: 100%;
     display: block;
@@ -26,4 +36,44 @@
     text-align:left;
     font-size: 1.5rem;
 
+}
+
+.stat{
+    background-color: #ffffffb4;
+    color: black;
+    margin: 0;
+    border-radius: 30px;
+    padding: 17px;
+    font-size: 0.9rem;
+    text-align:center;
+}
+
+@keyframes appear {
+    from {
+        max-height: 0;
+    }to{
+        max-height: 100px;
+    }
+    
+}
+@keyframes disappear {
+    from{
+        padding: 17px;
+        max-height: 100px;
+    }to{
+        max-height: 0px;
+        padding: 0px;
+    }
+}
+
+.open{
+    max-height: 100px;
+    overflow: hidden;
+    animation: appear 0.5s ease 0s 1;
+}
+.close{
+    padding: 0px;
+    max-height: 0px;
+    overflow: hidden;
+    animation: disappear 0.5s ease 0s 1;
 }

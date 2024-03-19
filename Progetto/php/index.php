@@ -13,14 +13,56 @@
         <body>
             <div class="container">
                 <div class="sx">
-                    <div id="modesel">
-                        <button id="classic">Classic</button>
-                        <button id="warped">Warped</button>
-                        <button id="obstacles">Obstacles</button>
-                    </div>
-                    <div id="classifica">
-                        <table id="hall">
-                        </table>
+                    <div class="rank-container">
+                        <div>
+                        </div>
+                        <div id = "modesel" class="inner-rank-container">
+                            <button id="classic">Classic</button>
+                            <button id="warped">Warped</button>
+                            <button id="obstacles">Obstacles</button>
+                        </div>
+                        <div class="inner-rank-container">
+                           <table id="hall">
+                                <thead>
+                                    <tr>
+                                        <td>Rank</td>
+                                        <td>User</td>
+                                        <td>Score</td>
+                                    </tr>
+                                </thead>
+                                <tbody id="ranking">
+                                    <tr>
+                                        <td><i class="fa fa-trophy"></i></td>
+                                        <td>-----</td>
+                                        <td>--</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>-----</td>
+                                        <td>--</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>-----</td>
+                                        <td>--</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>-----</td>
+                                        <td>--</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>-----</td>
+                                        <td>--</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class = "inner-rank-container">
+                            <button id="refresh">Ricarica <i class="fa fa-refresh"></i></button>
+                        </div>
                     </div>
                 </div>
                 <div class="cx">
