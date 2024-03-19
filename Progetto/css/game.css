@@ -40,37 +40,37 @@ td{
 #popup{
     position: absolute;
     justify-self: center;
-    top: 170px;
-    left: 164px;
-    display: block;
+    align-self: center;
+    justify-content: center;
+    display: grid;
     margin: 10px;
-    color: #000000;
     border-style: none;
     border-radius: 30px;
-    border-color: #30bf1a;
+    background-color: #30bf1a;
+    padding: 5px;
 
 }
 
 #avvia{
     margin: 0;
+    top: -20px;
     border-radius: 30px;
     padding: 10px;
     border-style: none;
-
 }
+
 #avvia, #popup p{
     position: relative;
     justify-self: center;
     text-align: center;
     font-size: 1.25rem;
+    color: black;
 }
 
 .inner-container{
     position: relative;
     top: -40px;
     justify-self: center;
+    display: grid;
 }
 
-.back{
-    top: 25px;
-}

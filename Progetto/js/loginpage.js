@@ -4,6 +4,9 @@ formLogin.addEventListener("submit", function(e){
     const usrnm = document.getElementById("user");
     const psswrd = document.getElementById("passw");
 
+    usrnm.classList.remove("invalid");
+    psswrd.classList.remove("invalid");
+
     const regExUsr = /^[a-zA-Z0-9\.\_]{6,15}$/;
     const regExPsw = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
 
@@ -11,11 +14,13 @@ formLogin.addEventListener("submit", function(e){
 
     if(!regExUsr.test(usrnm.value)){
         adv.classList.add("showed");
+        usrnm.classList.add("invalid");
         adv.textContent ="Username deve contenere almeno 6 caratteri alfanuerici può includere i caratteri . o _";
         return;
     }
     if(!regExPsw.test(psswrd.value)){
         adv.classList.add("showed");
+        psswrd.classList.add("invalid");
         adv.textContent ="Password deve contenere almeno 8 caratteri di cui uno maiuscolo e un numero.";
         return;
     }else{
@@ -44,6 +49,8 @@ formLogin.addEventListener("submit", function(e){
                 console.log("Prblemi nell'accesso");
                 adv.textContent = data.info;
                 adv.classList.add("showed");
+                usrnm.classList.add("invalid");
+                psswrd.classList.add("invalid");
                 formLogin.reset();
             }
         })

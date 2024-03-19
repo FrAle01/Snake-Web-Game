@@ -7,6 +7,11 @@ formSignup.addEventListener("submit", function(e){
     const mail = document.getElementById("mail");
     const psswrd = document.getElementById("passw");
 
+    usrnm.classList.remove("invalid");
+    mail.classList.remove("invalid");
+    psswrd.classList.remove("invalid");
+
+
     const regExUsr = /^[a-zA-Z0-9\.\_]{6,15}$/;
     const regExPsw = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
     const regExMail = /^(.+)@([^\.].*)\.([a-z]{2,})$/;
@@ -25,16 +30,19 @@ formSignup.addEventListener("submit", function(e){
     }
     if(!regExUsr.test(usrnm.value)){
         adv.classList.add("showed");
-        adv.textContent ="Username deve contenere almeno 6 caratteri alfanuerici può includere i caratteri . o _";
+        usrnm.classList.add("invalid");
+        adv.textContent ="Username deve contenere almeno 6 caratteri alfanuerici, può includere i caratteri . o _";
         return;
     }
     if(!regExMail.test(mail.value)){
         adv.classList.add("showed");
+        mail.classList.add("invalid");
         adv.textContent ="Formato mail non valido";
         return;
     }
     if(!regExPsw.test(psswrd.value)){
         adv.classList.add("showed");
+        psswrd.classList.add("invalid");
         adv.textContent ="Password deve contenere almeno 8 caratteri di cui uno maiuscolo e un numero.";
         return;
     }else{

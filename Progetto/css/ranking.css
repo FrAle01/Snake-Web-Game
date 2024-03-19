@@ -71,7 +71,7 @@ tbody td{
 .selected{
     background-color: green;
     color: white;
-    animation: selecting 0.2s ease 0s 1;
+    animation: selecting 0.5s ease 0s 1;
 
 }
 

@@ -71,9 +71,14 @@
                         <a id="login" href="loginpage.php">Accedi</a>
                         <a id="signup" href="signuppage.php">Registrati</a>
                     </div>
+                    <div>
+                        <a id="host" href="homepage.php">Entra come ospite</a>
+                    </div>
                 </div>
                 <div class="dx">
-                    <button class="info">How to play</button>
+                    <div class="info-container">
+                        <button class="info">How to play</button>
+                    </div>
                 </div>
             </div>
             <script src="../js/index.js"></script>

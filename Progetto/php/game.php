@@ -12,12 +12,11 @@
         <body>
             <div class="container">
                 <div class="sx">
-                    
-                </div>
-                <div class="cx">
                     <div>
                         <a class="back home" href="homepage.php"><i class= "fa fa-home"></i> Home</a>
                     </div>
+                </div>
+                <div class="cx">
                     <h1 class="gioco">SNAKE</h1>
                     <div class="inner-container">
                         <table id="game"></table>

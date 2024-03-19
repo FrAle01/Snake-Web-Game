@@ -59,4 +59,6 @@ function logout(){
 
 }
 
-logoutB.addEventListener("click", logout);
+if(logoutB != null){
+    logoutB.addEventListener("click", logout);
+}

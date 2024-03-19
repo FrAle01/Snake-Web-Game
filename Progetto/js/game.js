@@ -2,8 +2,8 @@
 const xGrid = 24;
 const yGrid = 25;
 
-const minPointClassic = 5;       // in ogni modalità il punteggio per ogni elemento mangiato varia tra un max e un minimo 
-const maxPointClassic = 15;
+const minPoint = 5;       // in ogni modalità il punteggio per ogni elemento mangiato varia tra un max e un minimo 
+const maxPoint = 15;
 
 let type;           // modalità di gioco
 let paused = false;  // variabile per pausa
@@ -41,7 +41,7 @@ let snake = [{      // inizializzo il serpente con tre elementi
 let food = {    // posiziono il primo elemento di cibo
     x: getRandom(0,xGrid),
     y: getRandom(0,yGrid),
-    points: getRandom(minPointClassic,maxPointClassic)
+    points: getRandom(minPoint,maxPoint)
 };
 
 let obstacles = []; // dichiarazione var per ostacoli
@@ -152,7 +152,7 @@ function moveSnake(){
         // creo nuovo cibo
         food.x = getRandom(0,(xGrid-1));
         food.y = getRandom(0,(yGrid-1));
-        food.points = getRandom(minPointClassic,maxPointClassic);
+        food.points = getRandom(minPoint,maxPoint);
             console.log("Food eaten");
     }else{
         snake.pop();  // elimino la coda del serpente
@@ -239,6 +239,7 @@ function start(){
     avvia.disabled=true;
     avvia.hidden=true;
     popupText.hidden=true;
+    popup.style.padding = '0px';
 
     loop=setInterval(moveSnake, 100);
 
@@ -284,7 +285,7 @@ function endGame(){
     food = {    // posiziono il primo elemento di cibo
         x: getRandom(0,(xGrid-1)),
         y: getRandom(0,(yGrid-1)),
-        points: getRandom(minPointClassic,maxPointClassic)
+        points: getRandom(minPoint,maxPoint)
     };
 
     // reset dir
@@ -315,6 +316,7 @@ function endGame(){
     })
 
     avvia.textContent="Restart";
+    popup.style.padding= '5px';
     avvia.hidden=false;
     popupText.hidden=false;
     avvia.disabled=false;
@@ -372,7 +374,8 @@ function pause(event){
             // disattivo l'event listener per la direzione
             document.removeEventListener("keydown",newDir); 
 
-            popupText.textContent = "-- Premi SPACE per continuare --";
+            popupText.textContent = "- Premi SPACE per continuare -";
+            popup.style.padding = '5px';
             popupText.hidden = false;
 
             paused = true;
@@ -380,6 +383,7 @@ function pause(event){
         }else{              // gioco in pausa
             
             popupText.hidden = true;
+            popup.style.padding = '0px';
 
             // riavvio gioco
             loop = setInterval(moveSnake, 100);

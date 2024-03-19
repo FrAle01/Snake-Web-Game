@@ -12,11 +12,13 @@
         <body>
             <div class="container">
                 <div class="sx">
-                </div>
-                <div class="cx">
                     <div class="inner-container">
                         <a class="back" href="index.php"><i class= "fa fa-chevron-circle-left"></i> BACK</a>
                     </div>
+                </div>
+                
+                <div class="cx">
+                    
                     <h1 class="gioco">SNAKE</h1>
                     <div class="dati">
                         <form id="signupform">
