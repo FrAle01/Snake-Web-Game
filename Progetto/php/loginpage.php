@@ -58,10 +58,19 @@
                 </div>
 
                 <div class="dx">
+
+
+                    <div id="pervisioneprogetto">
+                        <p>Per testare il sito senza registrarsi accedere con credenziali</p>
+                        <p>username: admin1</p>
+                        <p>password: Admin123</p>
+                    </div>
+
+
                 </div>
 
             </div>
-            
+
                 <script src="../js/loginpage.js"></script>
         </body>
 

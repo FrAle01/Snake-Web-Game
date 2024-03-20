@@ -65,11 +65,22 @@ function showStat(mode){
             if(textElem.hidden){    // se elemento nascosto lo mostra
                 textElem.classList.remove("close");
                 textElem.classList.add("open");
+                textElem.classList.add("stat");
                 textElem.hidden = false;
 
             }else{      // altrimenti inverte la situazione (se 'nascosto', non con hidden, lo mostra o viceversa)
-                textElem.classList.toggle("open");
-                textElem.classList.toggle("close");
+                if(!textElem.classList.contains("desc")){   // non contiene descrizione
+                    
+                    textElem.classList.toggle("open");  
+                    textElem.classList.toggle("close");
+                    textElem.classList.toggle("stat");
+
+                }else{  // contiene descrizione
+
+                    textElem.classList.toggle("desc");
+                    textElem.classList.toggle("stat");
+
+                }
             }
 
         }else{

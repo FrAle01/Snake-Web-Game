@@ -14,7 +14,6 @@ input{
     text-align: left;
     border-style: none;
     font-size: 1.25rem;
-    color:black;
 }
 
 #login{
@@ -91,4 +90,15 @@ input{
 
     animation: brrr 0.5s linear 0s 1;
 
+}
+
+#pervisioneprogetto{
+    max-width: 90%;
+    justify-self: center;
+}
+
+#pervisioneprogetto p{
+    position: relative;
+    top: 45%;
+    color: black;
 }

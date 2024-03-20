@@ -38,7 +38,7 @@
                                     </tr>
                                 </thead>
                                 <tbody id="ranking">
-                                    <tr>
+                                    <tr class="top">
                                         <td><i class="fa fa-trophy"></i></td>
                                         <td>-----</td>
                                         <td>--</td>

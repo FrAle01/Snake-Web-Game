@@ -58,7 +58,7 @@
                     $row = $stmt->fetch();
                     
                     if($i === 1){   // inserisco torfeo o numero a seconda della posizione
-                        $rank = '<tr>
+                        $rank = '<tr class="top">
                                     <td><i class="fa fa-trophy"></i></td>';
                     }else{
                         $rank .= '<tr>

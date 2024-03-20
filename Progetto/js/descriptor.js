@@ -48,7 +48,7 @@ function showDesc(mode){
             break;
         case 'warped':
             textSelector = "wText";
-            description = 'Snake in modalità warped:<br />prendi il cibo <i class="fa fa-circle" style="font-size:0.9rem;color:red"></i><br />i bordi non sono un tuo problema<br />attenzione alla tua coda';
+            description = 'Snake in modalità warped:<br />prendi il cibo <i class="fa fa-circle" style="font-size:0.9rem;color:red"></i><br />i bordi non sono un problema<br />attenzione alla coda';
             break;
         case 'obstacles':
             description = 'Snake in modalità obstacles:<br />prendi il cibo <i class="fa fa-circle" style="font-size:0.9rem;color:red"></i><br />attenzione ai bordi<br />non sbattere contro gli ostacoli <i class="fa fa-circle" style="font-size:0.9rem;color:black"></i>';
@@ -63,11 +63,22 @@ function showDesc(mode){
     if(textElem.hidden){    // se elemento nascosto lo mostra
         textElem.classList.remove("close");
         textElem.classList.add("open");
+        textElem.classList.add("desc");
         textElem.hidden = false
 
     }else{      // altrimenti inverte la situazione (se 'nascosto', non con hidden, lo mostra o viceversa)
-        textElem.classList.toggle("open");
-        textElem.classList.toggle("close");
+        if(!textElem.classList.contains("stat")){    // non contiene statistiche
+            
+            textElem.classList.toggle("open");
+            textElem.classList.toggle("close");
+            textElem.classList.toggle("desc");
+
+        }else{
+
+            textElem.classList.toggle("stat");
+            textElem.classList.toggle("desc");
+
+        }
     }
 
 }

@@ -38,17 +38,17 @@
 
                     <div class= "inner-container">
                         <button id="classic">CLASSIC</button><i class="fa fa-gamepad icon" id="cIcon"></i><i class="fa fa-info-circle iicon" id="cInfo"></i>
-                        <p class = "stat" id = "cText" hidden></p>
+                        <p class = "pop" id = "cText" hidden></p>
                     </div>
 
                     <div class= "inner-container">
                         <button id="warped">WARPED</button><i class="fa fa-spinner icon" id="wIcon"></i><i class="fa fa-info-circle iicon" id="wInfo"></i>
-                        <p class = "stat" id = "wText" hidden></p>
+                        <p class = "pop" id = "wText" hidden></p>
                     </div>
 
                     <div class= "inner-container">
                         <button id="obstacles">OBSTACLES</button><i class="fa fa-cube icon" id="oIcon"></i><i class="fa fa-info-circle iicon" id="oInfo"></i>
-                        <p class = "stat" id = "oText" hidden></p>
+                        <p class = "pop" id = "oText" hidden></p>
                     </div>
                     
             

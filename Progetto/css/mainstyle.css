@@ -61,7 +61,7 @@ body{
     font-size: 10rem;
     text-align:center;
     line-height: 0px;
-    color: black;
+    color:  #004000;
     animation: titleAnimation 3s infinite;
 }
 
@@ -103,46 +103,102 @@ body{
 @keyframes titleAnimation {
     0% {
         transform: translateY(0);
-        color: black;
+        color:  #004000;
         font-weight: normal;
-      }
+        text-shadow: none;
+    }
       25% {
-        transform: translateY(-10px);
-        color: #555555;
+        transform: translateY(-15px);
+        color: #00c000;
         font-weight: bold;
+        text-shadow: 0 0 25px #004000;
       }
       50% {
         transform: translateY(0);
-        color: black;
+        color: #004000;
         font-weight: normal;
+        text-shadow: none;
+
       }
       75% {
-        transform: translateY(10px);
-        color: #555;
+        transform: translateY(15px);
+        color: #00c000;
         font-weight: bold;
+        text-shadow: 0 0 25px #004000;
+
+
       }
       100% {
         transform: translateY(0);
-        color: #00000099;
+        color: #004000;
         font-weight: normal;
+        text-shadow: none;
       }
 }
 
 @keyframes titleAnimationHovered {
     0%, 100% {
         transform: translateX(0) translateY(0);
+        color:  #004000;
+        font-weight: normal;
+        text-shadow: none;
       }
-      25% {
-        transform: translateX(100px) translateY(0);
+      10% {
+        transform: translateX(25px) translateY(0);
+        color: #00c000;
+        font-weight: bold;
+        text-shadow: 0 0 25px #004000;
+      }
+      20% {
+        transform: translateX(25px) translateY(-25px);
+        color: #00c000;
+        font-weight: bold;
+        text-shadow: 0 0 25px #004000;
+      }
+      30% {
+        transform: translateX(50px) translateY(-25px);
+        color:  #004000;
+        font-weight: normal;
+        text-shadow: none;
+      }
+      40% {
+        transform: translateX(50px) translateY(-50px);
+        color: #00c000;
+        font-weight: bold;
+        text-shadow: 0 0 25px #004000;
       }
       50% {
-        transform: translateX(100px) translateY(100px);
+        transform: translateX(0) translateY(-50px);
+        color: #00c000;
+        font-weight: bold;
+        text-shadow: 0 0 25px #004000;
       }
-      75% {
-        transform: translateX(200px) translateY(100px);
+      60% {
+        transform: translateX(0) translateY(25px);
+        color:  #004000;
+        font-weight: normal;
+        text-shadow: none;
+      }
+      70% {
+        transform: translateX(-50px) translateY(25px);
+        color: #00c000;
+        font-weight: bold;
+        text-shadow: 0 0 25px #004000;
+      }
+      80% {
+        transform: translateX(-50px) translateY(-25px);
+        color: #00c000;
+        font-weight: bold;
+        text-shadow: 0 0 25px #004000;
+      }
+      90% {
+        transform: translateX(0) translateY(-25px);
+        color:  #004000;
+        font-weight: normal;
+        text-shadow: none;
       }
 }
 
 .gioco:hover{
-    animation: titleAnimationHovered 1s linear 0s infinite;
+    animation: titleAnimationHovered 3s linear 0s infinite;
 }

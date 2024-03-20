@@ -42,7 +42,13 @@ td{
     text-align: center;
     background-color: #ffffffb4;
     margin: 0px 2px 0px 2px;
-    line-height: 30px;
+    line-height: 35px;
+}
+
+thead td{
+    font-size: 1.2rem;
+    background-color: #00c000;
+    color: white;
 }
 
 tbody td{
@@ -60,7 +66,7 @@ tbody td{
 @keyframes selecting {
     from{
         background-color: white;
-        color: #65e180;
+        color: #80e180;
     }
     to{
         background-color: green;
@@ -89,9 +95,14 @@ tbody td{
 }
 
 #refresh{
+    position: relative;
+    top: 20px;
     width: 35%;
     justify-self: center;
 }
 
+.top td, .top i{
+    color: #004000;
+}
 
 
