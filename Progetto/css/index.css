@@ -3,11 +3,14 @@
     justify-content: center;
     text-decoration: none;
 }
+.host-button{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
 
 #login, #signup, #host{
     display: block;
-    width: auto;
-    height: auto;
     margin: 10px;
     background: #ffffff;
     padding: 10px;
@@ -33,6 +36,7 @@
     font-size: 1.25rem;
     top: -60px;
     margin: 15px 50px 15px 50px;
+    max-width: 50%;
 }
 .cx{
     grid-template-rows: 50% 20% 20% 10%;

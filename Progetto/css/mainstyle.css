@@ -39,6 +39,7 @@ body{
     position: absolute;
     display: grid;
     align-items: center;
+    justify-items: stretch;
     justify-content: center;
     grid-column: 2;
     margin: 0px;
@@ -62,6 +63,7 @@ body{
     text-align:center;
     line-height: 0px;
     color: black;
+    animation: snakeAnimation 3s infinite;
 }
 
 .back{
@@ -86,3 +88,30 @@ body{
     transition-delay: 0s;
 }
 
+@keyframes snakeAnimation {
+    0% {
+        transform: translateY(0);
+        color: #333;
+        font-weight: normal;
+      }
+      25% {
+        transform: translateY(-10px);
+        color: #555;
+        font-weight: bold;
+      }
+      50% {
+        transform: translateY(0);
+        color: #333;
+        font-weight: normal;
+      }
+      75% {
+        transform: translateY(10px);
+        color: #555;
+        font-weight: bold;
+      }
+      100% {
+        transform: translateY(0);
+        color: #333;
+        font-weight: normal;
+      }
+}

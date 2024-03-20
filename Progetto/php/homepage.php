@@ -41,8 +41,20 @@
                     
                 </div>
                 <div class="dx">
-                    <div>
-                        
+                    <div class="account-container">
+                        <?php
+                            if (isset($_SESSION['user'])) {
+                                echo    '<div id="account">
+                                            <i class="fa fa-user-circle-o"></i>
+                                            <p id="user">'.$_SESSION['user'].'</p>
+                                        </div>';
+                            }else{
+                                echo    '<div id="account">
+                                            <i class="fa fa-user-secret"></i>
+                                            <p id="user">Ospite</p>
+                                        </div>';
+                            }
+                        ?>
                     </div>         
                 </div>
             </div>

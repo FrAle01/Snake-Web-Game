@@ -91,3 +91,28 @@
     overflow: hidden;
     animation: disappear 0.5s ease 0s 1;
 }
+
+.account-container{
+    display: grid;
+    grid-template-rows: 35% 30% 35%;
+}
+
+#account{
+    display: grid;
+    grid-template-rows: 40% 20% 40%;
+    align-items: stretch;
+    justify-items: center;
+    grid-row: 2;
+}
+
+#account i{
+    font-size: 5rem;
+    color: green;
+}
+#user{
+    font-size: 1.75rem;
+    color: green;
+    text-align: center;
+    position: relative;
+    top: -10px;
+}

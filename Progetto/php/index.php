@@ -66,12 +66,14 @@
                     </div>
                 </div>
                 <div class="cx">
-                    <h1 class="gioco">SNAKE</h1>
+                    <div>
+                        <h1 class="gioco">SNAKE</h1>
+                    </div>
                     <div class="buttons">
                         <a id="login" href="loginpage.php">Accedi</a>
                         <a id="signup" href="signuppage.php">Registrati</a>
                     </div>
-                    <div>
+                    <div class="host-button">
                         <a id="host" href="homepage.php">Entra come ospite</a>
                     </div>
                 </div>

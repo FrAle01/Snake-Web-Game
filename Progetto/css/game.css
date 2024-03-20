@@ -46,8 +46,8 @@ td{
     margin: 10px;
     border-style: none;
     border-radius: 30px;
-    background-color: #30bf1a;
-    padding: 5px;
+    background-color: #ffffffc3;
+    padding: 5px 20px 5px 20px;
 
 }
 
@@ -57,6 +57,7 @@ td{
     border-radius: 30px;
     padding: 10px;
     border-style: none;
+    background-color: #30bf1ac3;
 }
 
 #avvia, #popup p{
@@ -74,3 +75,32 @@ td{
     display: grid;
 }
 
+.account-container{
+    display: grid;
+    grid-template-rows: 35% 30% 35%;
+}
+
+#account{
+    display: grid;
+    grid-template-rows: 40% 20% 40%;
+    align-items: stretch;
+    justify-items: center;
+    grid-row: 2;
+}
+
+#account i{
+    font-size: 5rem;
+    color: green;
+}
+#user{
+    font-size: 1.75rem;
+    color: green;
+    text-align: center;
+    position: relative;
+    top: -10px;
+}
+#setted{
+    font-size: 1.25rem;
+    color: green;
+    text-align: center;
+}
