@@ -10,7 +10,7 @@
             <link rel="stylesheet" href="../css/mainstyle.css">
         </head>
         <body>
-            
+
             <div class="container">
 
                 <div class="sx">
@@ -33,13 +33,13 @@
 
                             <div class="input-container">
                                 <label for="nome">
-                                    <input type="text" name="nome" id="nome" pattern="^[A-Z]+[a-zA-Z]*$" placeholder="Nome" required>
+                                    <input type="text" name="nome" id="nome" placeholder="Nome" required>
                                 </label>
                             </div>
 
                             <div class="input-container">
                                 <label for="cognome">
-                                    <input type="text" name="cognome" id="cognome" pattern="^[A-Z]+[a-zA-Z]*$" placeholder="Cognome" required>
+                                    <input type="text" name="cognome" id="cognome" placeholder="Cognome" required>
                                 </label>
                             </div>
 

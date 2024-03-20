@@ -20,6 +20,14 @@
                         <a class="back home" href="homepage.php"><i class= "fa fa-home"></i> Home</a>
                     </div>
 
+                    <div class="command-container">
+                        <p >Usa</p> 
+                        <p><i class="fa fa-caret-square-o-up"></i><i class="fa fa-caret-square-o-left"></i><i class="fa fa-caret-square-o-down"></i><i class="fa fa-caret-square-o-right"></i></p>
+                        <p>o</p>
+                        <p><span>W</span><span>A</span><span>S</span><span>D</span></p>
+                        <p>per muovere il serpente</p>
+                    </div>
+
 
                 </div>
 
@@ -61,6 +69,7 @@
                                             <i class="fa fa-user-circle-o"></i>
                                             <p id="user">'.$_SESSION['user'].'</p>
                                             <p id ="setted">'.$_SESSION['mode'].'</p>
+                                            <p id ="space">Premi -SPACE- per mettere in pausa</p>
                                         </div>';
                             }else{
                                 echo    '<div id="account">
@@ -69,9 +78,11 @@
                                 
                                 if (isset($_SESSION['mode'])) {
                                     echo    '<p id="setted">'.$_SESSION['mode'].'</p>
+                                             <p id ="space">Premi -SPACE- per mettere in pausa</p>
                                         </div>';
                                 }else{
                                     echo    '<p id="setted">classic</p>
+                                             <p id ="space">Premi -SPACE- per mettere in pausa</p>
                                         </div>';
                                 }
                                 
@@ -83,7 +94,7 @@
                 </div>
 
             </div>
-            
+
             <script src="../js/game.js"></script>
         </body>
 

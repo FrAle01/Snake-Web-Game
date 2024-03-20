@@ -32,6 +32,9 @@ td{
 .snake{
     background-color: green;
 }
+.head{
+    background-color: #004000;
+}
 .food{
     background-color: red;
 }
@@ -116,6 +119,11 @@ td{
 }
 #setted{
     font-size: 1.25rem;
+    color: green;
+    text-align: center;
+}
+#space{
+    font-size: 0.9rem;
     color: green;
     text-align: center;
 }

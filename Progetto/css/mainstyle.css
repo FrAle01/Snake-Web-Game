@@ -62,14 +62,15 @@ body{
     text-align:center;
     line-height: 0px;
     color: black;
-    animation: snakeAnimation 3s infinite;
+    animation: titleAnimation 3s infinite;
 }
 
 .back{
-    position: relative;
+    position: absolute;
+    z-index: 1;
     top: 5%;
-    left:50%;
-    font-size: 1rem;
+    left:15%;
+    font-size: 1.1rem;
     color: #65e180;
     background-color: white;
     border-radius: 30px;
@@ -77,6 +78,18 @@ body{
     padding: 10px;
     text-decoration: none;
     text-align: center;
+}
+
+.info{
+    position: relative;
+    top: 90%;
+    left: 25%;
+    border-radius: 30px;
+    padding: 10px;
+    border-style: none;
+    text-align:center;
+    font-size: 0.9rem;
+   
 }
 
 .back:hover, .info:hover{
@@ -87,20 +100,20 @@ body{
     transition-delay: 0s;
 }
 
-@keyframes snakeAnimation {
+@keyframes titleAnimation {
     0% {
         transform: translateY(0);
-        color: #333;
+        color: black;
         font-weight: normal;
       }
       25% {
         transform: translateY(-10px);
-        color: #555;
+        color: #555555;
         font-weight: bold;
       }
       50% {
         transform: translateY(0);
-        color: #333;
+        color: black;
         font-weight: normal;
       }
       75% {
@@ -110,7 +123,26 @@ body{
       }
       100% {
         transform: translateY(0);
-        color: #333;
+        color: #00000099;
         font-weight: normal;
       }
+}
+
+@keyframes titleAnimationHovered {
+    0%, 100% {
+        transform: translateX(0) translateY(0);
+      }
+      25% {
+        transform: translateX(100px) translateY(0);
+      }
+      50% {
+        transform: translateX(100px) translateY(100px);
+      }
+      75% {
+        transform: translateX(200px) translateY(100px);
+      }
+}
+
+.gioco:hover{
+    animation: titleAnimationHovered 1s linear 0s infinite;
 }

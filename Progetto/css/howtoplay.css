@@ -1,0 +1,58 @@
+.inner-container{
+    align-self: stretch;
+    justify-self: stretch;
+    justify-items: center;
+    display: grid;
+    grid-template-rows: 25% 75%;
+}
+
+#htp{
+    position: absolute;
+    top:25%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-margin-left: 10px;
+    max-width: 90%;
+    max-height: 70%;
+}
+
+/* Modifiche scrollbar valide solo per Chrome */
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+::-webkit-scrollbar-track {
+    background: #30bf1ac3;
+    border-radius: 30px;
+
+}
+  
+::-webkit-scrollbar-thumb {
+    background: #65e180;
+    border-radius: 30px;
+
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: green;
+}
+
+
+#htp *{
+    color: black;
+}
+#htp p{
+    margin: 0;
+    text-align: center;
+}
+#htp h3, h2, h1{
+    margin: 5px;
+    text-align: center;
+}
+span{
+    font-weight: 1000;
+}
+
+.gioco{
+    line-height: normal;
+}

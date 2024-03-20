@@ -74,6 +74,10 @@ const popup = document.getElementById("popup");
 const popupText = document.querySelector("#popup p");
 avvia.addEventListener("click", start);
 
+// testo con avviso per mettere in pausa
+const pauseAdv = document.getElementById("space");
+
+
 
 function moveSnake(){
 
@@ -203,16 +207,23 @@ function drawGame(){
         for (let j = 0; j < xGrid; j++) {
             let idBody = j+"-"+i
             let cell = document.getElementById(idBody);
+            cell.classList.remove("head");    
             cell.classList.remove("snake");    
             cell.classList.remove("food");    
             cell.classList.remove("obs");    
         }        
     }
 
+    let count = 1;
     snake.forEach(bodyPart => {
         let idBody = bodyPart.x+"-"+bodyPart.y;
         const cell = document.getElementById(idBody);
-        cell.classList.add("snake");
+        if(count === 1){    // testa
+            cell.classList.add("head");
+        }else{              // corpo
+            cell.classList.add("snake");
+        }
+        count++;
     });
 
     let idBody=food.x+"-"+food.y;
@@ -374,6 +385,8 @@ function pause(event){
             // disattivo l'event listener per la direzione
             document.removeEventListener("keydown",newDir); 
 
+            pauseAdv.hidden = true;
+
             popupText.textContent = "- Premi SPACE per continuare -";
             popup.style.padding = '5px';
             popupText.hidden = false;
@@ -381,6 +394,8 @@ function pause(event){
             paused = true;
 
         }else{              // gioco in pausa
+
+            pauseAdv.hidden = false;
             
             popupText.hidden = true;
             popup.style.padding = '0px';

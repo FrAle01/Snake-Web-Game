@@ -16,14 +16,17 @@ formSignup.addEventListener("submit", function(e){
     const regExPsw = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
     const regExMail = /^(.+)@([^\.].*)\.([a-z]{2,})$/;
 
+    const regExNome = /^[A-Z]+[a-zA-Z]*$/;
+    const regExCognome = /^[A-Z]+[a-zA-Z]*$/;
+
     const adv = document.getElementById("alert");
 
-    if(!nome.checkValidity() ){
+    if(!regExNome.test(nome.value)){
         adv.classList.add("showed");
         adv.textContent = "Il nome deve iniziare con  lettera maiuscola";
         return;
     }
-    if(!cogn.checkValidity() ){
+    if(!regExCognome.test(cogn.value)){
         adv.classList.add("showed");
         adv.textContent ="Il cognome deve iniziare con  lettera maiuscola";
         return;
