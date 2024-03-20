@@ -10,16 +10,24 @@
             <link rel="stylesheet" href="../css/mainstyle.css">
         </head>
         <body>
+            
             <div class="container">
+
                 <div class="sx">
+
+
                     <div class="inner-container">
                         <a class="back" href="index.php"><i class= "fa fa-chevron-circle-left"></i> BACK</a>
                     </div>
+
+
                 </div>
                 
                 <div class="cx">
                     
+
                     <h1 class="gioco">SNAKE</h1>
+
                     <div class="dati">
                         <form id="signupform">
 
@@ -55,17 +63,22 @@
                             </div>
 
                             <button id="signup">Registrati</button>
+
                         </form>
+
                         <div id="alert">
-                            </div>
                         </div>
                     </div>
-                    <div class="dx">
-                        </div>
-                    </div>
-                    <script src="../js/signuppage.js"></script>
-                </body>
+
                 
+                </div>
+        
+                <div class="dx">
+                </div>
+
+            </div>
+                    
+                <script src="../js/signuppage.js"></script>
+        </body>
                 
-                
-                </html>
+</html>

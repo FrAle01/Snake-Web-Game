@@ -11,16 +11,23 @@
             <link rel="stylesheet" href="../css/ranking.css">
         </head>
         <body>
+
             <div class="container">
+
                 <div class="sx">
+
+
                     <div class="rank-container">
+
                         <div>
                         </div>
+
                         <div id = "modesel" class="inner-rank-container">
                             <button id="classic">Classic</button>
                             <button id="warped">Warped</button>
                             <button id="obstacles">Obstacles</button>
                         </div>
+
                         <div class="inner-rank-container">
                            <table id="hall">
                                 <thead>
@@ -60,33 +67,49 @@
                                 </tbody>
                             </table>
                         </div>
+
                         <div class = "inner-rank-container">
                             <button id="refresh">Ricarica <i class="fa fa-refresh"></i></button>
                         </div>
+
                     </div>
+
+
                 </div>
+
                 <div class="cx">
+
+
                     <div>
                         <h1 class="gioco">SNAKE</h1>
                     </div>
+
                     <div class="buttons">
                         <a id="login" href="loginpage.php">Accedi</a>
                         <a id="signup" href="signuppage.php">Registrati</a>
                     </div>
+
                     <div class="host-button">
                         <a id="host" href="homepage.php">Entra come ospite</a>
                     </div>
+
+
                 </div>
+
                 <div class="dx">
+
+
                     <div class="info-container">
                         <button class="info">How to play</button>
                     </div>
+
+
                 </div>
+
             </div>
+
             <script src="../js/index.js"></script>
             <script src="../js/ranking.js"></script>
         </body>
-
-
 
     </html>

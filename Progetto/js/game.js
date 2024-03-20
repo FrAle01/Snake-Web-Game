@@ -5,7 +5,7 @@ const yGrid = 25;
 const minPoint = 5;       // in ogni modalità il punteggio per ogni elemento mangiato varia tra un max e un minimo 
 const maxPoint = 15;
 
-let type;           // modalità di gioco
+let type = "classic";           // modalità di gioco (deafault 'classic')
 let paused = false;  // variabile per pausa
 
 let game = document.getElementById("game");

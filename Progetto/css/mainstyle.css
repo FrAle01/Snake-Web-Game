@@ -3,7 +3,6 @@
 
 *{
     font-family: "Kode Mono", monospace;
-    font-optical-sizing: auto;
     font-weight: 600;
     font-style: normal;
     color: #30bf1a;
@@ -69,7 +68,7 @@ body{
 .back{
     position: relative;
     top: 5%;
-    left:60%;
+    left:50%;
     font-size: 1rem;
     color: #65e180;
     background-color: white;

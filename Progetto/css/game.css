@@ -1,6 +1,15 @@
+.cx-container{
+    display: grid;
+    grid-template-rows: 25% 60% 15% ;
+    margin: 0;
+    justify-self: stretch;
+    align-self: stretch;
+}
+
 #game{
     width : 408px;
     height: 425px;
+    position: absolute;
     justify-items: center;
     background-color: #30bf1a;
     border-collapse: collapse;
@@ -32,9 +41,9 @@ td{
 
 #score, #timer{
     position: relative;
-    right: 150px;
-    bottom: 5px;
+    margin: 0;
     color: white;
+    left: 25%;
 }
 
 #popup{
@@ -62,17 +71,23 @@ td{
 
 #avvia, #popup p{
     position: relative;
-    justify-self: center;
     text-align: center;
     font-size: 1.25rem;
     color: black;
 }
 
-.inner-container{
-    position: relative;
-    top: -40px;
-    justify-self: center;
+.game-container{
+    justify-items: center;
+    justify-content: center;
     display: grid;
+}
+
+.score-container{
+    margin:0;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-self: start;
+    justify-self: stretch;
 }
 
 .account-container{

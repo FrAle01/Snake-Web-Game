@@ -10,28 +10,50 @@
             <link rel="stylesheet" href="../css/game.css">
         </head>
         <body>
+
             <div class="container">
+
                 <div class="sx">
+
+
                     <div>
                         <a class="back home" href="homepage.php"><i class= "fa fa-home"></i> Home</a>
                     </div>
+
+
                 </div>
+
                 <div class="cx">
-                    <h1 class="gioco">SNAKE</h1>
-                    <div class="inner-container">
-                        <table id="game"></table>
-                        <div id="popup">
-                            <p></p>
-                            <button id="avvia">Start</button>
+
+
+                    <div class="cx-container">
+
+                        <h1 class="gioco">SNAKE</h1>
+
+                        <div class="game-container">
+
+                            <table id="game"></table>
+
+                            <div id="popup">
+                                <p></p>
+                                <button id="avvia">Start</button>
+                            </div>
+
                         </div>
+
+                        <div class="score-container">
+                            <p id="score"></p>
+                            <p id="timer"></p>
+                        </div>
+
                     </div>
-                    <div class="inner-container">
-                        <p id="score"></p>
-                        <p id="timer"></p>
-                    </div>
-                    
+
+
                 </div>
+
                 <div class="dx">
+
+
                     <div class="account-container">
                         <?php
                             if (isset($_SESSION['user'])) {
@@ -43,14 +65,25 @@
                             }else{
                                 echo    '<div id="account">
                                             <i class="fa fa-user-secret"></i>
-                                            <p id="user">Ospite</p>
-                                            <p id="setted">'.$_SESSION['mode'].'</p>
+                                            <p id="user">Ospite</p>';
+                                
+                                if (isset($_SESSION['mode'])) {
+                                    echo    '<p id="setted">'.$_SESSION['mode'].'</p>
                                         </div>';
+                                }else{
+                                    echo    '<p id="setted">classic</p>
+                                        </div>';
+                                }
+                                
                             }
                         ?>
                     </div> 
+
+
                 </div>
+
             </div>
+            
             <script src="../js/game.js"></script>
         </body>
 
