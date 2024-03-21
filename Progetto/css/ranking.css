@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-rows: 10% 10% 35% 10% 35%;
+    grid-template-rows: 10% 10% 45% 10% 25%;
 }
 
 .inner-rank-container{
@@ -106,7 +106,7 @@ tbody td{
 
 #refresh{
     position: relative;
-    top: 60px;
+    top: -10px;
     width: 35%;
     justify-self: center;
 }
