@@ -6,51 +6,42 @@ const minPoint = 5;       // in ogni modalità il punteggio per ogni elemento ma
 const maxPoint = 15;
 
 let type = "classic";           // modalità di gioco (deafault 'classic')
-let paused = false;  // variabile per pausa
+let paused;  // variabile per pausa
+let ended = 1;
 
 let game = document.getElementById("game");
 buildGrid(game);
 
-let score = 0;
+let score;
 const scoreText = document.getElementById("score");
 scoreText.textContent = "Score: "+ score;
 
-let time = "00:00";
+let time;
 const elemTimer = document.getElementById("timer");
 elemTimer.textContent = "Time: "+time;
-let sec = 0;
-let min = 0;
-let intCount = 0;
+let sec;
+let min;
+let intCount;
 
 
 function getRandom(min, max){
     return Math.floor(Math.random()*(max-min))+min;
 }
 
-let snake = [{      // inizializzo il serpente con tre elementi
-    x: (xGrid/4),
-    y: ((yGrid+1)/2)
-}, {
-    x: ((xGrid/4) -1),
-    y: ((yGrid+1)/2)
-},{
-    x: ((xGrid/4) -2),
-    y: ((yGrid+1)/2)
-}];
+let snake = [];
 
-let food = {    // posiziono il primo elemento di cibo
-    x: getRandom(0,xGrid),
-    y: getRandom(0,yGrid),
-    points: getRandom(minPoint,maxPoint)
-};
+let head;
+
+let food;
 
 let obstacles = []; // dichiarazione var per ostacoli
 let obsNum = 0;
 
-let dir = "right";  // inizializzo la direzione del serpente
+let dir;  // inizializzo la direzione del serpente
 let loop;       // variabile per il timer del gioco
-// -- fine inizializzazione
 
+getGameMod();   // recupero la modalità di gioco dal server
+gameInit();     // inizializzo le variabili di gioco
 
 
 //  costruisco la griglia per il gioco
@@ -79,6 +70,50 @@ const pauseAdv = document.getElementById("space");
 
 
 
+function gameInit(){
+    // score set
+    score = 0;
+
+    // timer
+    time = "00:00";
+    sec = 0;
+    min = 0;
+    intCount = 0;
+
+    // serpente
+    snake = [{      
+        x: (xGrid/4),
+        y: ((yGrid+1)/2),
+    }, {
+        x: ((xGrid/4) -1),
+        y: ((yGrid+1)/2)
+    },{
+        x: ((xGrid/4) -2),
+        y: ((yGrid+1)/2)
+    }];
+
+    // testa
+    head = {x: snake[0].x, 
+        y: snake[0].y};
+
+    // cibo
+    food = {    // posiziono il primo elemento di cibo
+        x: getRandom(0,(xGrid-1)),
+        y: getRandom(0,(yGrid-1)),
+        points: getRandom(minPoint,maxPoint)
+    };
+
+    // dir
+    dir = "right";  // default a destra
+    
+    //reset obstacles
+    obstacles = [];
+    obsNum = 0;
+
+    paused = false;
+}
+
+
 function moveSnake(){
 
     if(++intCount === 10){ // la pagina si aggiorna ogni 100 millisec, per un secondo ci vogliono 10 aggiornamenti
@@ -89,10 +124,9 @@ function moveSnake(){
         elemTimer.textContent = "Time: "+time;
         intCount = 0;
     }
-    console.log("Min: "+min);
-    console.log("Tot sec: "+sec);
 
-    let head = {x: snake[0].x, 
+    // prendo la testa del serpente
+    head = {x: snake[0].x, 
                 y: snake[0].y};
     
     // aggiorno la testa del serpente
@@ -112,6 +146,40 @@ function moveSnake(){
     }
 
 
+    // controllo se la testa ha incontrato qualcosa
+    checkHead();
+    if(ended === 1){    // head ha scontrato qualche ostacolo --> ho gia eseguito la procedura di fine gioco
+        return;
+    }
+
+
+    // controllo che abbia mangiato
+    checkEat();
+
+    // aggiungo un nuovo ostacolo ogni 10 punti fatti in modalità obstacles
+    if(type === "obstacles"){
+        setObstacle();
+    }
+
+
+    // controllo collisioni con il corpo
+    for (let i = 0; i < snake.length; i++) {
+        if (head.x === snake[i].x && head.y === snake[i].y){
+                snake.forEach(elem => {
+                });
+            endGame();
+            return;
+        } 
+    }
+
+    // no collisioni
+    snake.unshift(head);
+    drawGame(); // ridisegno la griglia
+
+}
+
+
+function checkHead(){
     switch (type) {
         case "warped":      // quando il serpente inconta il bordo sbuca dall'altra parte
             if(head.x > (xGrid-1) ){
@@ -147,9 +215,10 @@ function moveSnake(){
             }
             break;
     }
+}
 
 
-    // controllo che abbia mangiato
+function checkEat(){
     if(head.x === food.x && head.y === food.y){
         score += food.points;   // aggiorno punteggio
         scoreText.textContent = "Score: "+ score;
@@ -162,47 +231,32 @@ function moveSnake(){
         snake.pop();  // elimino la coda del serpente
             console.log("snake popped");
     }
+}
 
-    // aggiungo un nuovo ostacolo ogni 10 punti fatti in modalità obstacles
-    if(type === "obstacles"){
-        if(score > (obsNum+1)*10){
-            obsNum++;
-            let matchFood = true;
-            let newObs;
-            while(matchFood){   // controllo che il nuovo ostacolo inserito non corrisponda alla posizione di cibo
-                newObs = {
-                    x: getRandom(1, (xGrid-2)), // gli ostacoli non toccheranno mai il bordo
-                    y: getRandom(1, (yGrid-2))
-                }
-    
-                // controllo di non aver posizionato l'ostacolo dove c'è del cibo
-                if(newObs.x !== food.x && newObs.y !== food.y){
-                    matchFood = false;
-                }
+function setObstacle(){
+    if(score > (obsNum+1)*10){
+        obsNum++;
+        let matchFood = true;
+        let newObs;
+        while(matchFood){   // controllo che il nuovo ostacolo inserito non corrisponda alla posizione di cibo
+            newObs = {
+                x: getRandom(1, (xGrid-2)), // gli ostacoli non toccheranno mai il bordo
+                y: getRandom(1, (yGrid-2))
             }
-            obstacles.unshift(newObs);
+
+            // controllo di non aver posizionato l'ostacolo dove c'è del cibo
+            if(newObs.x !== food.x && newObs.y !== food.y){
+                matchFood = false;
+            }
         }
+        obstacles.unshift(newObs);
     }
-
-
-    // controllo collisioni con il corpo
-    for (let i = 0; i < snake.length; i++) {
-        if (head.x === snake[i].x && head.y === snake[i].y){
-                snake.forEach(elem => {
-                });
-            endGame();
-            return;
-        } 
-    }
-
-    // no collisioni
-    snake.unshift(head);
-    drawGame(); // ridisegno la griglia
-
 }
 
 
 function drawGame(){
+
+    // svuoto la tabella dagli elementi
     for (let i = 0; i < yGrid; i++) {
         for (let j = 0; j < xGrid; j++) {
             let idBody = j+"-"+i
@@ -214,6 +268,7 @@ function drawGame(){
         }        
     }
 
+    // coloro le celle con il serpente
     let count = 1;
     snake.forEach(bodyPart => {
         let idBody = bodyPart.x+"-"+bodyPart.y;
@@ -226,10 +281,12 @@ function drawGame(){
         count++;
     });
 
+    // coloro la cella con il cibo
     let idBody=food.x+"-"+food.y;
     const foodCell = document.getElementById(idBody);
     foodCell.classList.add("food");
 
+    // coloro le celle con gli ostacoli
     obstacles.forEach(obs => {
         let idBody  = obs.x+"-"+obs.y;
         const cell = document.getElementById(idBody);
@@ -252,6 +309,7 @@ function start(){
     popupText.hidden=true;
     popup.style.padding = '0px';
 
+    ended = 0;
     loop=setInterval(moveSnake, 100);
 
     // aggiornamento direzione serpente
@@ -265,48 +323,14 @@ function endGame(){
 
     // impedisco la pausa
     document.removeEventListener("keydown", pause);
-    paused = false;
 
     let oldScore = score;       // tenuto da parte per inserimento classicafica
-    let endingTime = time;      // tenuto per inserimento db
     popupText.textContent = "Hai fatto "+oldScore+" punti";
 
-    // reset score
-    score = 0;
+    gameInit();
 
-    // reset timer
-    time = "00:00";
-    sec = 0;
-    min = 0;
-    intCount = 0;
-
-    // reset serpente
-    snake = [{      
-        x: (xGrid/4),
-        y: ((yGrid+1)/2),
-    }, {
-        x: ((xGrid/4) -1),
-        y: ((yGrid+1)/2)
-    },{
-        x: ((xGrid/4) -2),
-        y: ((yGrid+1)/2)
-    }];
-
-    // reset cibo
-    food = {    // posiziono il primo elemento di cibo
-        x: getRandom(0,(xGrid-1)),
-        y: getRandom(0,(yGrid-1)),
-        points: getRandom(minPoint,maxPoint)
-    };
-
-    // reset dir
     document.removeEventListener("keydown",newDir); // disattivo l'event listener in modo che a ogni restart inizi sempre verso destra
-    dir = "right";
-
-    //reset obstacles
-    obstacles = [];
-    obsNum = 0;
-
+    
     // send data to php
     let gameForm = new FormData();
     gameForm.append('score', oldScore);
@@ -332,7 +356,7 @@ function endGame(){
     popupText.hidden=false;
     avvia.disabled=false;
 
-
+    ended = 1;
 }
 
 function newDir(event){
@@ -427,4 +451,4 @@ function getGameMod(){
     })
 }
 
-getGameMod();
+

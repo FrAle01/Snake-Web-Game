@@ -15,7 +15,7 @@
             echo json_encode(array("error"=> true , "info"=> "Mode not in session"));
             return;
         }else if (!isset($_GET["mode"])) {
-            echo json_encode(array("error"=> true , "info"=> "Problem in connnection"));
+            echo json_encode(array("error"=> true , "info"=> "Problem in connection"));
             return;
         }else{
             $_GET["mode"] = $_SESSION["mode"];
