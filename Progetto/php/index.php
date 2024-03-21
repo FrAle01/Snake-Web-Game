@@ -30,6 +30,7 @@
 
                         <div class="inner-rank-container">
                            <table id="hall">
+                                <caption>Hall of Fame</caption>
                                 <thead>
                                     <tr>
                                         <td>Rank</td>

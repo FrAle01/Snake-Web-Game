@@ -31,6 +31,16 @@ table{
     border-collapse: collapse;
 }
 
+table caption{
+    background-color: rgb(0, 160, 0);
+    border-radius: 30px;
+    font-size: 1.3rem;
+    color: #e0e0e0;
+    max-width: 70%;
+    margin: 0 auto 5px auto;
+    line-height: 40px;
+}
+
 tr{
     display: grid;
     grid-template-columns: 15% 55% 30%;
@@ -96,7 +106,7 @@ tbody td{
 
 #refresh{
     position: relative;
-    top: 20px;
+    top: 60px;
     width: 35%;
     justify-self: center;
 }

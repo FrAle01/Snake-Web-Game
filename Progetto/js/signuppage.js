@@ -7,6 +7,8 @@ formSignup.addEventListener("submit", function(e){
     const mail = document.getElementById("mail");
     const psswrd = document.getElementById("passw");
 
+    nome.classList.remove("invalid");
+    cogn.classList.remove("invalid");
     usrnm.classList.remove("invalid");
     mail.classList.remove("invalid");
     psswrd.classList.remove("invalid");
@@ -23,11 +25,13 @@ formSignup.addEventListener("submit", function(e){
 
     if(!regExNome.test(nome.value)){
         adv.classList.add("showed");
+        nome.classList.add("invalid");
         adv.textContent = "Il nome deve iniziare con  lettera maiuscola";
         return;
     }
     if(!regExCognome.test(cogn.value)){
         adv.classList.add("showed");
+        cogn.classList.add("invalid");
         adv.textContent ="Il cognome deve iniziare con  lettera maiuscola";
         return;
     }

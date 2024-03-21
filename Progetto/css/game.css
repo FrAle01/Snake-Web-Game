@@ -30,13 +30,13 @@ td{
 }
 
 .snake{
-    background-color: green;
+    background-color: #008000;
 }
 .head{
     background-color: #004000;
 }
 .food{
-    background-color: red;
+    background-color: #ff0000;
 }
 .obs{
     background-color: #000000;
@@ -45,7 +45,7 @@ td{
 #score, #timer{
     position: relative;
     margin: 0;
-    color: white;
+    color: #ffffff;
     left: 25%;
     top: 50%;
 }
@@ -77,7 +77,7 @@ td{
     position: relative;
     text-align: center;
     font-size: 1.25rem;
-    color: black;
+    color: #000000;
 }
 
 .game-container{
@@ -109,30 +109,30 @@ td{
 
 #account i{
     font-size: 5rem;
-    color: green;
+    color: #008000;
 }
 #user{
     font-size: 1.75rem;
-    color: green;
+    color: #008000;
     text-align: center;
     position: relative;
     top: -10px;
 }
 #setted{
     font-size: 1.25rem;
-    color: green;
+    color: #008000;
     text-align: center;
 }
 #space{
     font-size: 0.9rem;
-    color: green;
+    color: #008000;
     text-align: center;
 }
 
 .command-container p{
     margin: 6px;
     text-align: center;
-    color: green;
+    color: #008000;
     font-size: 1.25;
 }
 
